@@ -237,7 +237,7 @@
     </div>
 </section>
 
-
+<!--Pricing-->
 <section class="bg-white dark:bg-gray-800 w-full px-8">
     <div class="container max-w-5xl py-8 mx-auto">
         <div class="sm:flex sm:items-center sm:justify-between">
@@ -313,9 +313,11 @@
                     </div>
                 </div>
 
-                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
-                    Choose plan
-                </button>
+                <a href="./cart.php">
+                    <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
+                        Start Now
+                    </button>
+                </a>
             </div>
 
             <div class="px-6 py-4 transition-colors duration-200 transform rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
@@ -373,7 +375,7 @@
                 </div>
 
                 <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
-                    Choose plan
+                    Start Now
                 </button>
             </div>
 
@@ -432,7 +434,7 @@
                 </div>
 
                 <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
-                    Choose plan
+                    Start Now
                 </button>
             </div>
 
