@@ -87,25 +87,32 @@
                             </th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                                Startup
-                            </th>
-                            <td class="px-6 py-4">
-                                Ghost Ruby
-                            </td>
-                            <td class="px-6 py-4">
-                                14500 Ks
-                            </td>
-                            <td class="px-6 py-4">
-                                19900 Ks
-                            </td>
-                            <td class="px-6 py-4 text-right">
-                                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-                            </td>
-                        </tr>
-                    </tbody>
+
+                    <?php
+                        include("../admin/config/config.php");
+                        $products_result = mysqli_query($conn, "SELECT * FROM products WHERE cmstheme='Ghost Ruby' ");
+                        while($products = mysqli_fetch_assoc($products_result)):
+                    ?>
+                        <tbody>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                                    <?php echo $products['name'] ?>
+                                </th>
+                                <td class="px-6 py-4">
+                                <?php echo $products['cmstheme'] ?>
+                                </td>
+                                <td class="px-6 py-4">
+                                <?php echo $products['price'] ?> Ks
+                                </td>
+                                <td class="px-6 py-4">
+                                <?php echo $products['yearly_price'] ?> Ks
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    <?php endwhile; ?>
                 </table>
             </div>
         </div>
