@@ -44,7 +44,7 @@
         </div>
 
         <!--Dashboard-->
-        <div class="mx-auto py-8" id="dashboard">
+        <div class="w-full px-12 py-8" id="dashboard">
             <h2 class="text-2xl font-medium">Dashboard</h2>
             <div class="mt-6 grid gap-20 grid-flow-col">
                 <div class="shadow-sm bg-white flex pl-4 pr-28 py-5 rounded-lg">
@@ -65,10 +65,11 @@
         </div>
 
         <!--Products Page-->
-        <div id="products" class="hidden w-full px-24 py-10">
-            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <div id="products" class="hidden w-full px-4 py-10">
+            <div class="relative overflow-x-auto">
+                <!--Products-->
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 sm:rounded-lg">
+                    <thead class="text-xs text-gray-700 uppercase bg-blue-100 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3">
                                 Product name
@@ -106,6 +107,77 @@
                                 </td>
                                 <td class="px-6 py-4">
                                 <?php echo $products['yearly_price'] ?> Ks
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    <?php endwhile; ?>
+                </table>
+
+                <!--Product Features-->
+                <table class="max-w-8xl text-sm mt-12 text-left text-gray-500 dark:text-gray-400 sm:rounded-lg">
+                    <thead class="text-xs text-gray-700 uppercase bg-green-100">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                Product Name
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Site
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Domain
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Disk Space
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Bandwidth
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Ssl Status
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Support
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Comment
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                <a href="./newproductfeature.php" class="sr-only/ text-blue-600">Create New Feature List</a>
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <?php
+                        $productfeatures_result = mysqli_query($conn, "SELECT * FROM features");
+                        while($features = mysqli_fetch_assoc($productfeatures_result)):
+                    ?>
+                        <tbody>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                                    <?php echo $features['product_name'] ?>
+                                </th>
+                                <td class="px-6 py-4">
+                                <?php echo $features['site'] ?>
+                                </td>
+                                <td class="px-6 py-4">
+                                <?php echo $features['domain'] ?> Ks
+                                </td>
+                                <td class="px-6 py-4">
+                                <?php echo $features['disk_space'] ?> Ks
+                                <td class="px-6 py-4">
+                                <?php echo $features['bandwidth'] ?> Ks
+                                </td>
+                                <td class="px-6 py-4">
+                                <?php echo $features['ssl_status'] ?> Ks
+                                </td>
+                                <td class="px-6 py-4">
+                                <?php echo $features['support'] ?> Ks
+                                </td>
+                                <td class="px-6 py-4">
+                                <?php echo $features['comment'] ?>
                                 </td>
                                 <td class="px-6 py-4 text-right">
                                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
