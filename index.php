@@ -255,9 +255,17 @@
         </div>
 
         <div class="grid gap-6 mt-16 -mx-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        
+        <?php
+            include("./admin/config/config.php");
+            $products_result = mysqli_query($conn, "SELECT products.*, features.* FROM products LEFT JOIN features ON products.featurelist_id = features.id");
+            while($mix = mysqli_fetch_assoc($products_result) ):
+
+        ?>
+
             <div class="px-6 py-4 transition-colors duration-200 transform rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
-                <p class="text-lg font-medium text-gray-800 dark:text-gray-100">Start-up ( best-seller )</p>
-                <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">19900 MMK <span class="text-base font-normal text-gray-600 dark:text-gray-400">/ Month</span></h4>
+                <p class="text-lg font-medium text-gray-800 dark:text-gray-100"> <?php echo $mix['name'] ?></p>
+                <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100"> <?php echo $mix['price'] ?> Ks <span class="text-base font-normal text-gray-600 dark:text-gray-400">/ Month</span></h4>
                 <p class="mt-4 text-gray-500 dark:text-gray-300">For most businesses that want to optimaize web queries.</p>
 
                 <div class="mt-8 space-y-8">
@@ -266,50 +274,63 @@
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                         </svg>
 
-                        <span class="mx-4 text-gray-700 dark:text-gray-300">Ghost Creator Set Website </span>
+                        <span class="mx-4 text-gray-700 dark:text-gray-300"><?php echo $mix['site']?> </span>
                     </div>
+                </div>
+
+                <div class="mt-8 space-y-8">
                     <div class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                         </svg>
 
-                        <span class="mx-4 text-gray-700 dark:text-gray-300">Free sub-domain (yoursite.creatorsets.com) </span>
+                        <span class="mx-4 text-gray-700 dark:text-gray-300"><?php echo $mix['domain']?> </span>
                     </div>
+                </div>
 
+                <div class="mt-8 space-y-8">
                     <div class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                         </svg>
 
-                        <span class="mx-4 text-gray-700 dark:text-gray-300">10 GB SSD Diskspace Hosting</span>
+                        <span class="mx-4 text-gray-700 dark:text-gray-300"><?php echo $mix['disk_space']?> </span>
                     </div>
+                </div>
 
+                <div class="mt-8 space-y-8">
                     <div class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                         </svg>
 
-                        <span class="mx-4 text-gray-700 dark:text-gray-300">Unlimited Bandwidth</span>
+                        <span class="mx-4 text-gray-700 dark:text-gray-300"><?php echo $mix['bandwidth']?> </span>
                     </div>
+                </div>
 
+                <div class="mt-8 space-y-8">
                     <div class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                         </svg>
 
-                        <span class="mx-4 text-gray-700 dark:text-gray-300">Free SSL (Secure Sockets Layer) Certificate</span>
+                        <span class="mx-4 text-gray-700 dark:text-gray-300"><?php echo $mix['ssl_status']?> </span>
                     </div>
+                </div>
 
+                <div class="mt-8 space-y-8">
                     <div class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                         </svg>
 
-                        <span class="mx-4 text-gray-700 dark:text-gray-300">24/7 Tech Support</span>
+                        <span class="mx-4 text-gray-700 dark:text-gray-300"><?php echo $mix['support']?> </span>
                     </div>
+                </div>
+
+                <div class="mt-8 space-y-8">
                     <div class="flex items-center">
-                        *
-                        <span class="mx-4 text-gray-700 dark:text-gray-300">You can purchase domain with Extra 2000MMK/month</span>
+                        <span class="mx-4 text-gray-700 dark:text-gray-300"><?php echo "*".$mix['comment']?> </span>
                     </div>
                 </div>
 
@@ -320,123 +341,7 @@
                 </a>
             </div>
 
-            <div class="px-6 py-4 transition-colors duration-200 transform rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700">
-                <p class="text-lg font-medium text-gray-800 dark:text-gray-100">Pro ( most pupular )</p>
-                <h4 class="mt-2 text-4xl font-semibold text-gray-800 dark:text-gray-100">39900 MMK <span class="text-base font-normal text-gray-600 dark:text-gray-400">/ Month</span></h4>
-                <p class="mt-4 text-gray-500 dark:text-gray-300">For most businesses that want to optimaize web queries.</p>
-
-                <div class="mt-8 space-y-8">
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-
-                        <span class="mx-4 text-gray-700 dark:text-gray-300">Ghost Creator Set Website </span>
-                    </div>
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-
-                        <span class="mx-4 text-gray-700 dark:text-gray-300">Free Domain (yoursite.com) </span>
-                    </div>
-
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-
-                        <span class="mx-4 text-gray-700 dark:text-gray-300">50 GB SSD Diskspace Hosting</span>
-                    </div>
-
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-
-                        <span class="mx-4 text-gray-700 dark:text-gray-300">Unlimited Bandwidth</span>
-                    </div>
-
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-
-                        <span class="mx-4 text-gray-700 dark:text-gray-300">Free SSL Certificate</span>
-                    </div>
-
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-
-                        <span class="mx-4 text-gray-700 dark:text-gray-300">24/7 Tech Support</span>
-                    </div>
-                </div>
-
-                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
-                    Start Now
-                </button>
-            </div>
-
-            <div class="px-6 py-4 transition-colors duration-200 transform bg-gray-700 rounded-lg dark:bg-gray-600">
-                <p class="text-lg font-medium text-gray-100">Business</p>
-                <h4 class="mt-2 text-4xl font-semibold text-gray-100">63500MMK <span class="text-base font-normal text-gray-400">/ Month</span></h4>
-                <p class="mt-4 text-gray-300">For most businesses that want to optimaize web queries.</p>
-
-                <div class="mt-8 space-y-8">
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-
-                        <span class="mx-4 text-gray-200">Ghost Creator Set Website</span>
-                    </div>
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-
-                        <span class="mx-4 text-gray-200">Free Domain (yoursite.com)</span>
-                    </div>
-
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-
-                        <span class="mx-4 text-gray-200">250GB SSD Diskspace Hosting</span>
-                    </div>
-
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-
-                        <span class="mx-4 text-gray-200">Unlimited Bandwidth</span>
-                    </div>
-
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-
-                        <span class="mx-4 text-gray-200">Free SSL Certificate</span>
-                    </div>
-
-                    <div class="flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-yellow-500" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-
-                        <span class="mx-4 text-gray-200">24/7 Tech Support</span>
-                    </div>
-                </div>
-
-                <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
-                    Start Now
-                </button>
-            </div>
+        <?php endwhile; ?>
 
         </div>
     </div>
