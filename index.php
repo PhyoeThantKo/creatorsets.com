@@ -334,7 +334,7 @@
                     </div>
                 </div>
 
-                <a href="./cart.php">
+                <a href="./cart.php?featureid=<?php echo $mix['id'] ?>">
                     <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
                         Start Now
                     </button>
@@ -434,6 +434,6 @@
 </footer>
     
 
-<script type="text/javascript" src="app/index.js"></script>
+<script type="text/javascript" src="app/navbg.js"></script>
 </body>
 </html>

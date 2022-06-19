@@ -1,3 +1,4 @@
+/*  change bg on scrolling */
 var myNav = document.getElementById('mynav');
 window.onscroll = function () { 
     "use strict";
