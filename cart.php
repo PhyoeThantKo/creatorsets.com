@@ -12,7 +12,7 @@
 
           <div class="bg-white my-20 max-w-5xl mx-auto rounded-2xl">
                <div class="flex border-b justify-center border-gray-200 dark:border-gray-700 max-w-5xl mx-auto pt-5">
-                    <h1 id="cart_nav" class="h-10 px-4 py-2 -mb-px text-sm text-center text-blue-600 text-gray-700 bg-transparent border-b-2 border-blue-500 sm:text-base dark:border-blue-400 dark:text-blue-300 whitespace-nowrap focus:outline-none">
+                    <h1 id="cart_nav" class="h-10 px-4 py-2 -mb-px text-sm text-center text-yellow-600 text-gray-700 bg-transparent border-b-2 border-yellow-500 sm:text-base dark:border-yellow-400 dark:text-yellow-300 whitespace-nowrap focus:outline-none">
                          01. Cart
                     </h1>
 
@@ -54,7 +54,7 @@
                                    </div>
                                    <br>
                               
-                                   <a name="continue" id="continue" class="px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-600 hover:bg-yellow-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-full cursor-pointer text-center">
+                                   <a name="continue" id="continue" class="px-5 py-3 font-medium tracking-wide text-yellow-700 capitalize transition-colors duration-200 transform bg-yellow-100 hover:bg-yellow-200 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-opacity-80 rounded-full cursor-pointer text-center">
                                         Continue
                                    </a>
                               </div>
@@ -83,12 +83,12 @@
                                                   class="px-4 py-3 mt-4 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
                                                   placeholder="Password"
                                              />
-                                             <a id="continue_to_payment" class="px-4 mt-5 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80 rounded-full cursor-pointer text-center">
+                                             <a id="continue_to_payment" class="px-5 mt-5 py-3 font-medium tracking-wide text-yellow-700 capitalize transition-colors duration-200 transform bg-yellow-100 hover:bg-yellow-200 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-opacity-80 rounded-full cursor-pointer text-center">
                                                   Create Account & Continue
                                              </a>
                                              <div class="flex flex-col items-center mt-5">
                                                   <p class="mt-1 text-xs font-light text-gray-500">
-                                                       IMPORTANT! You will need these infromation to Log In to your Creator Set Website<a class="ml-1 font-medium text-blue-400">Sign up now</a>
+                                                       IMPORTANT! You will need these infromation to Log In to your Creator Set Website
                                                   </p>
                                              </div>
                                         </div>

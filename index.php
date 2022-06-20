@@ -29,7 +29,7 @@
                 <a href="#" class="text-base font-medium leading-6 text-gray-600 whitespace-no-wrap transition duration-150 ease-in-out hover:text-gray-900">
                     See demo
                 </a>
-                <a href="#" class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-white whitespace-no-wrap bg-yellow-400 border border-transparent shadow-sm hover:bg-yellow-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-400 rounded-full">
+                <a href="#" class="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 whitespace-no-wrap bg-yellow-100 text-yellow-700 border border-transparent shadow-sm hover:bg-yellow-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-300 rounded-full">
                     Subscribe Now
                 </a>
             </div>
@@ -89,7 +89,7 @@
                  <ul class="mt-8 md:grid md:grid-cols-2 gap-6">
                      <li class="mt-6 lg:mt-0">
                          <div class="flex">
-                             <span class="flex-shrink-0 flex items-center justify-center h-6 w-6 rounded-full bg-yellow-300 text-yellow-800 drark:bg-transparent">
+                             <span class="flex-shrink-0 flex items-center justify-center h-6 w-6 rounded-full bg-yellow-100 text-yellow-700 drark:bg-transparent">
                                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd">
                                      </path>
@@ -102,7 +102,7 @@
                      </li>
                      <li class="mt-6 lg:mt-0">
                          <div class="flex">
-                             <span class="flex-shrink-0 flex items-center justify-center h-6 w-6 rounded-full bg-yellow-300 text-yellow-800 drark:bg-transparent">
+                             <span class="flex-shrink-0 flex items-center justify-center h-6 w-6 rounded-full bg-yellow-100 text-yellow-700 drark:bg-transparent">
                                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd">
                                      </path>
@@ -115,7 +115,7 @@
                      </li>
                      <li class="mt-6 lg:mt-0">
                          <div class="flex">
-                             <span class="flex-shrink-0 flex items-center justify-center h-6 w-6 rounded-full bg-yellow-300 text-yellow-800 drark:bg-transparent">
+                             <span class="flex-shrink-0 flex items-center justify-center h-6 w-6 rounded-full bg-yellow-100 text-yellow-700 drark:bg-transparent">
                                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd">
                                      </path>
@@ -128,7 +128,7 @@
                      </li>
                      <li class="mt-6 lg:mt-0">
                          <div class="flex">
-                             <span class="flex-shrink-0 flex items-center justify-center h-6 w-6 rounded-full bg-yellow-300 text-yellow-800 drark:bg-transparent">
+                             <span class="flex-shrink-0 flex items-center justify-center h-6 w-6 rounded-full bg-yellow-100 text-yellow-700 drark:bg-transparent">
                                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd">
                                      </path>
@@ -169,13 +169,13 @@
             </p>
             <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
                 <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Faster and has cleaner design than Wordpress
+                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-400 rounded-full"><span class="text-sm font-bold">✓</span></span> Faster and has cleaner design than Wordpress
                 </li>
                 <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Easy to use
+                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-400 rounded-full"><span class="text-sm font-bold">✓</span></span> Easy to use
                 </li>
                 <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Customizable
+                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-400 rounded-full"><span class="text-sm font-bold">✓</span></span> Customizable
                 </li>
             </ul>
         </div>
@@ -193,13 +193,13 @@
             </p>
             <ul class="p-0 m-0 leading-6 border-0 border-gray-300">
                 <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> URL optimization
+                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-400 rounded-full"><span class="text-sm font-bold">✓</span></span> URL optimization
                 </li>
                 <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Customize for Facebook, Twitter and Google preview
+                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-400 rounded-full"><span class="text-sm font-bold">✓</span></span> Customize for Facebook, Twitter and Google preview
                 </li>
                 <li class="box-border relative py-1 pl-0 text-left text-gray-500 border-solid">
-                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-300 rounded-full"><span class="text-sm font-bold">✓</span></span> Google accelerated mobile page support
+                    <span class="inline-flex items-center justify-center w-6 h-6 mr-2 text-white bg-yellow-400 rounded-full"><span class="text-sm font-bold">✓</span></span> Google accelerated mobile page support
                 </li>
             </ul>
         </div>
@@ -248,7 +248,7 @@
 
             <div class="overflow-hidden p-0.5 mt-6 border rounded-lg dark:border-gray-700">
                 <div class="sm:-mx-0.5 flex">
-                    <button class=" focus:outline-none px-3 w-1/2 sm:w-auto py-1 sm:mx-0.5 text-white bg-yellow-500 rounded-lg">Monthly</button>
+                    <button class=" focus:outline-none px-3 w-1/2 sm:w-auto py-1 sm:mx-0.5 text-yellow-700 bg-yellow-100 rounded-lg">Monthly</button>
                     <button class=" focus:outline-none px-3 w-1/2 sm:w-auto py-1 sm:mx-0.5 text-gray-800 dark:text-gray-200 dark:hover:bg-gray-700 bg-transparent rounded-lg hover:bg-gray-200">Yearly</button>
                 </div>
             </div>
@@ -335,7 +335,7 @@
                 </div>
 
                 <a href="./cart.php?featureid=<?php echo $mix['id'] ?>">
-                    <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-md hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
+                    <button class="w-full px-4 py-2 mt-10 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-yellow-500 rounded-full hover:bg-yellow-600 focus:outline-none focus:bg-yellow-600">
                         Start Now
                     </button>
                 </a>
@@ -356,7 +356,7 @@
         
         <div class="mt-6 sm:-mx-2">
             <div class="inline-flex w-full sm:w-auto sm:mx-2">
-                <a href="#" class="inline-flex items-center justify-center w-full px-5 py-2 text-white bg-yellow-400 rounded-full hover:bg-yellow-500 focus:ring focus:ring-yellow-300 focus:ring-opacity-80">
+                <a href="#" class="inline-flex items-center justify-center w-full px-5 py-2 text-white bg-yellow-500 rounded-full hover:bg-yellow-500 focus:ring focus:ring-yellow-300 focus:ring-opacity-80">
                     Subscribe Now
                 </a>
             </div>
