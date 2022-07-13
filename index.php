@@ -347,7 +347,7 @@
     </div>
 </section>
 
-
+<!--CTA-->
 <section class="w-full px-8 py-16">
     <div class="container flex flex-col items-center max-w-5xl py-12 mx-auto text-center bg-indigo-500 rounded-3xl">
         <h2 class="text-3xl font-semibold text-white sm:text-4xl dark:text-white">
