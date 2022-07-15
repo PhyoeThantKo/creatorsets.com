@@ -8,6 +8,7 @@
      <link rel="stylesheet" href="style.css">
      <link rel="stylesheet" href="app/fonts/googlesans.css">
      <link rel="stylesheet" href="app/scroll.css">
+     <link rel="stylesheet" href="./app/aos.css">
 </head>
 <body class="" style="font-family:'Product Sans Regular'">
 <div class="heroContainer h-screen"  style="background: url(app/images/herobg.webp) no-repeat center/cover;">
@@ -37,7 +38,7 @@
     </section>
 
     <!-- Section 2 -->
-    <section class="flex items-center justify-center pt-4 sm:pt-10 md:pt-16 lg:pt-44 overflow-x-hidden">
+    <section data-aos="fade-up" data-aos-duration="600" class="flex items-center justify-center pt-4 sm:pt-10 md:pt-16 lg:pt-44 overflow-x-hidden">
         <div class="relative lg:px-0 max-w-5xl px-8">
             <div class="flex flex-col w-full md:flex-row">
                 <!-- Top Text -->
@@ -73,7 +74,7 @@
     </section>
 </div>
 
-<div class="w-full p-4 px-8 relative py-26 lg:mt-14">
+<div data-aos="fade-up" data-aos-duration="600" class="w-full p-4 px-8 relative py-26 lg:mt-14">
      <div class="relative max-w-5xl mx-auto">
          <div class="flex flex-row-reverse content-center items-center">
              <div class="w-1/2">
@@ -152,7 +153,7 @@
  
 <!-- Section 3 -->
 <section class="w-full pt-7 pb-7 md:pt-20 md:pb-24">
-    <div class="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl">
+    <div data-aos="fade-up" data-aos-duration="600" class="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl">
 
         <!-- Image -->
         <div class="box-border relative w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10">
@@ -181,7 +182,7 @@
         </div>
         <!-- End  Content -->
     </div>
-    <div class="box-border flex flex-col items-center content-center px-8 mx-auto mt-2 leading-6 text-black border-0 border-gray-300 border-solid md:mt-20 xl:mt-0 md:flex-row max-w-7xl lg:px-16">
+    <div data-aos="fade-up" data-aos-duration="600" class="box-border flex flex-col items-center content-center px-8 mx-auto mt-2 leading-6 text-black border-0 border-gray-300 border-solid md:mt-20 xl:mt-0 md:flex-row max-w-7xl lg:px-16">
 
         <!-- Content -->
         <div class="box-border w-full text-black border-solid md:w-1/2 md:pl-6 xl:pl-32">
@@ -213,7 +214,7 @@
 </section>
 
 <!--Companies-->
-<section class="bg-white pt-7 pb-14 w-full px-8">
+<section data-aos="fade-up" data-aos-duration="600" class="bg-white pt-7 pb-14 w-full px-8">
     <div class="container max-w-5xl mx-auto">
         <h1 class="text-sm font-bold tracking-wide text-center text-gray-800 uppercase mb-7">Top-leading companies using Ghost CMS</h1>
         <div class="flex grid items-center justify-center grid-cols-4 grid-cols-10 gap-y-8">
@@ -238,7 +239,7 @@
 </section>
 
 <!--Pricing-->
-<section class="bg-white dark:bg-gray-800 w-full px-8">
+<section data-aos="fade-up" data-aos-duration="600" class="bg-white dark:bg-gray-800 w-full px-8">
     <div class="container max-w-5xl py-8 mx-auto">
         <div class="sm:flex sm:items-center sm:justify-between">
             <div>
@@ -348,7 +349,7 @@
 </section>
 
 <!--CTA-->
-<section class="w-full px-8 py-16">
+<section data-aos="fade-up" data-aos-duration="600" class="w-full px-8 py-16">
     <div class="container flex flex-col items-center max-w-5xl py-12 mx-auto text-center bg-indigo-500 rounded-3xl">
         <h2 class="text-3xl font-semibold text-white sm:text-4xl dark:text-white">
             Ready to grab your success with <br> Ghost Creator Set ?
@@ -435,5 +436,9 @@
     
 
 <script type="text/javascript" src="app/navbg.js"></script>
+<script src="./app/aos.js"></script>
+<script>
+    AOS.init();
+</script>
 </body>
 </html>

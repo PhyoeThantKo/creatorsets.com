@@ -23,11 +23,7 @@ continue_btn.addEventListener('click', ()=>{
     createAcc.classList.remove('hidden');
 });
 
-/*acc_nav.classList.remove('text-yellow-600', 'border-b-2');
-payment_nav.classList.add('text-yellow-600', 'border-b-2', 'border-yellow-500');
-createAcc.classList.add('hidden');
-payment.classList.remove('hidden');
-*/
+/*from validation*/
 document.getElementById('continue_to_payment').addEventListener('click', ()=>{
     //activate submit button
     submit_btn.removeAttribute('disabled');
@@ -91,7 +87,8 @@ document.getElementById('bank').addEventListener('click', ()=>{
 const total_container = document.getElementById('total_container');
 const subtotal_tag = document.getElementById('subtotal');
 const total_tag = document.getElementsByClassName('total');
-const mo_price = document.getElementById('mo_price')
+const total_input_tag = document.getElementById('total_input');
+const mo_price = document.getElementById('mo_price');
 const duraion_tag = document.getElementById('duration');
 const select_notice = document.getElementById('select_notice');
 
@@ -101,6 +98,7 @@ document.getElementById('paymonthly').addEventListener('click', ()=>{
     duraion_tag.innerHTML = "1 month";
     total_tag[0].innerHTML = mo_price.innerHTML + "Ks";
     total_tag[1].innerHTML = mo_price.innerHTML + "Ks";
+    total_input_tag.value = mo_price.innerHTML;
     select_notice.classList.add('hidden');
     total_container.classList.remove('hidden');
 });
@@ -114,6 +112,7 @@ document.getElementById('annually').addEventListener('click', ()=>{
     duraion_tag.innerHTML = "1 Year";
     total_tag[0].innerHTML = annual_total_price + "Ks";
     total_tag[1].innerHTML = annual_total_price + "Ks";
+    total_input_tag.value = annual_total_price;
     select_notice.classList.add('hidden');
     total_container.classList.remove('hidden');
 });
