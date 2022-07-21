@@ -30,7 +30,7 @@
                     $result = mysqli_fetch_assoc($chosen_product);
                ?>
                <div class="p-12">
-                    <form action="./submitOrder.php" name="customer_info" method="POST">
+                    <form action="./submitOrder.php" name="customer_info" method="POST" enctype="multipart/form-data">
                          <input type="text" name="product_id" value="<?php echo $result['id'] ?>" class="hidden">
 
                          <!--Cart-->
@@ -135,7 +135,7 @@
      
                                                   <span class="mt-4">02. Upload the screenshot that include transferred date and time</span>
                                                        <input class="form-control block w-full px-2 py-1 my-2 text-sm font-normal bg-gray-200 bg-clip-padding border border-solid border-gray-300 rounded-md transition ease-in-out
-                                                       m-0 focus:border-yellow-600 focus:outline-none" type="file">
+                                                       m-0 focus:border-yellow-600 focus:outline-none" type="file" name="mobile_ss">
                                                   </span>
      
                                              </span>
@@ -149,7 +149,7 @@
      
                                                   <span class="mt-4">02. Upload the bank transfer receipt or the screenshot that include transferred date and time</span>
                                                        <input class="form-control block w-full px-2 py-1 my-2 text-sm font-normal bg-gray-200 bg-clip-padding border border-solid border-gray-300 rounded-md transition ease-in-out
-                                                       m-0 focus:border-yellow-600 focus:outline-none" id="formFileSm" type="file">
+                                                       m-0 focus:border-yellow-600 focus:outline-none" id="formFileSm" type="file" name="bank_ss">
                                                   </span>
                                              </span>
                                         </p>
