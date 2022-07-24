@@ -12,9 +12,6 @@ const continue_btn = document.getElementById("continue");
 const email_field = document.getElementById('email');
 const name_field = document.getElementById('name');
 const password_field = document.getElementById('password');
-//deactivate submit button
-const submit_btn = document.getElementById('submit');
-submit_btn.disabled = true;
 
 continue_btn.addEventListener('click', ()=>{
     cart.classList.add("hidden");
@@ -23,7 +20,21 @@ continue_btn.addEventListener('click', ()=>{
     createAcc.classList.remove('hidden');
 });
 
-/*from validation*/
+document.getElementById('wallet').addEventListener('click', ()=>{
+    wallet_info.classList.remove("hidden");
+    bank_info.classList.add("hidden");
+
+});
+document.getElementById('bank').addEventListener('click', ()=>{
+    wallet_info.classList.add("hidden");
+    bank_info.classList.remove("hidden");
+});
+
+//deactivate submit button
+const submit_btn = document.getElementById('submit');
+submit_btn.disabled = true;
+
+/*user info from validation*/
 document.getElementById('continue_to_payment').addEventListener('click', ()=>{
     //activate submit button
     submit_btn.removeAttribute('disabled');
@@ -72,16 +83,6 @@ document.getElementById('continue_to_payment').addEventListener('click', ()=>{
     }
 });
 
-document.getElementById('wallet').addEventListener('click', ()=>{
-    wallet_info.classList.remove("hidden");
-    bank_info.classList.add("hidden");
-
-});
-document.getElementById('bank').addEventListener('click', ()=>{
-    wallet_info.classList.add("hidden");
-    bank_info.classList.remove("hidden");
-});
-
 //Duration & Total Price
 
 const total_container = document.getElementById('total_container');
@@ -116,3 +117,23 @@ document.getElementById('annually').addEventListener('click', ()=>{
     select_notice.classList.add('hidden');
     total_container.classList.remove('hidden');
 });
+
+//submit form on payment validation succes
+const submit_link = document.getElementById('submit_link')
+submit_link.addEventListener('click', ()=>{
+    const mobile_ss = document.getElementById('mobile_ss').value
+    const bank_ss = document.getElementById('bank_ss').value
+    //validate payment recipe or screenshot
+    if(!mobile_ss){
+        console.log("no mobile proof")
+        if (!bank_ss){
+            console.log("no bank proof")
+        } else{
+            console.log("bank ss found continue to submte")
+            submit_btn.click();
+        }
+    } else{
+        console.log('mobile ss found continue to submit')
+        submit_btn.click()
+    }
+})

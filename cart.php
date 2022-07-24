@@ -129,13 +129,13 @@
                                    <div class="w-3/4 pr-8">
                                         <p class="border-2  text-lg rounded-2xl px-5 py-3"><input id="wallet" type="radio" name="payment_method" value="Mobile Wallet" required>   Mobile Wallets 
                                              <br> 
-                                             <span id="wallet_info" class="hidden flex mt-3 flex-col justify-center max-w-3xl mx-5 text-center col-span-full lg:col-span-3 lg:text-left">
+                                             <span id="wallet_info" class="hidden flex mt-3 flex-col justify-center max-w-3xl mx-5  col-span-full lg:col-span-3">
      
                                                   <span>01. Pay through one of the below wallets <br> <span class="pl-7">Kbz Pay, Wave Pay, One Pay & UAB Pay : 09785854399</span> <br> <span class="pl-7">Name : PHYO THANT KO</span> </span>
      
                                                   <span class="mt-4">02. Upload the screenshot that include transferred date and time</span>
                                                        <input class="form-control block w-full px-2 py-1 my-2 text-sm font-normal bg-gray-200 bg-clip-padding border border-solid border-gray-300 rounded-md transition ease-in-out
-                                                       m-0 focus:border-yellow-600 focus:outline-none" type="file" name="mobile_ss">
+                                                       m-0 focus:border-yellow-600 focus:outline-none" type="file" id="mobile_ss" name="mobile_ss">
                                                   </span>
      
                                              </span>
@@ -143,13 +143,13 @@
                                         <br>
                                         <p class="border-2  text-lg rounded-2xl px-5 py-2"><input id="bank" type="radio" name="payment_method" value="Bank" required>   Bank ( Mobile Banking or Traditional Banking)
                                              <br> 
-                                             <span id="bank_info" class="hidden flex mt-3 flex-col justify-center max-w-3xl mx-5 text-center col-span-full lg:col-span-3 lg:text-left">
+                                             <span id="bank_info" class="hidden flex mt-3 flex-col justify-center max-w-3xl mx-5  col-span-full lg:col-span-3">
                                                   <span>01. Pay through one of the banks below <br> <span class="pl-7">KBZ : 3123 0131 2007 8210 1 <br> <span class="pl-7">UAB : 0653 3010 0014 544</span> <br> <span class="pl-7">Name : PHYO THANT KO</span></span>
                                                   </span>
      
                                                   <span class="mt-4">02. Upload the bank transfer receipt or the screenshot that include transferred date and time</span>
                                                        <input class="form-control block w-full px-2 py-1 my-2 text-sm font-normal bg-gray-200 bg-clip-padding border border-solid border-gray-300 rounded-md transition ease-in-out
-                                                       m-0 focus:border-yellow-600 focus:outline-none" id="formFileSm" type="file" name="bank_ss">
+                                                       m-0 focus:border-yellow-600 focus:outline-none" id="bank_ss" type="file" name="bank_ss">
                                                   </span>
                                              </span>
                                         </p>
@@ -164,7 +164,8 @@
 
                               </div>
 
-                              <input type="submit" name="submit" id="submit" value="Submit Order" class="float-right mt-2 px-5 py-3 font-medium tracking-wide text-yellow-700 capitalize transition-colors duration-200 transform bg-yellow-200 hover:bg-yellow-300 hover:text-yellow-800 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-opacity-80 rounded-full cursor-pointer text-center">
+                              <a id="submit_link" class="float-right mt-2 px-5 py-3 font-medium tracking-wide text-yellow-700 capitalize transition-colors duration-200 transform bg-yellow-200 hover:bg-yellow-300 hover:text-yellow-800 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-opacity-80 rounded-full cursor-pointer text-center">Submit Order</a>
+                              <input type="submit" name="submit" id="submit" value="Submit Order" class="hidden">
                          </div>
                     </form>
                </div>
