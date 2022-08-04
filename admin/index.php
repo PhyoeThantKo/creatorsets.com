@@ -6,6 +6,8 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Document</title>
      <link rel="stylesheet" href="../style.css">
+
+     <script defer src="./index.js"></script>
 </head>
 <body class="bg-gray-50">
     <div class="flex w-full">
@@ -23,7 +25,7 @@
                         <span class="mx-4 font-medium">Dashboard</span>
                     </a>
 
-                    <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700 cursor-pointer" onclick="">
+                    <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700 cursor-pointer" onclick="switchToOrders()">
                         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -44,7 +46,7 @@
         </div>
 
         <!--Dashboard-->
-        <div class="w-full px-12 py-8" id="dashboard">
+        <div class="mx-auto my-8" id="dashboard">
             <h2 class="text-2xl font-medium">Dashboard</h2>
             <div class="mt-6 grid gap-20 grid-flow-col">
                 <div class="shadow-sm bg-white flex pl-4 pr-28 py-5 rounded-lg">
@@ -64,26 +66,110 @@
             </div>
         </div>
 
-        <!--Products Page-->
-        <div id="products" class="hidden w-full px-4 py-10">
-            <div class="relative overflow-x-auto">
-                <!--Products-->
-                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 sm:rounded-lg">
+        <!--Orders-->
+        <div class="hidden mx-auto my-8" id="orders">
+        <table class="max-w-5xl text-sm text-left text-gray-500 dark:text-gray-400 sm:rounded-lg">
                     <thead class="text-xs text-gray-700 uppercase bg-blue-100 dark:text-gray-400">
                         <tr>
                             <th scope="col" class="px-6 py-3">
+                                Name
+                            </th>
+                            <th scope="col" class=" py-3">
+                                Email
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Product
+                            </th>
+                            <th scope="col" class=" py-3">
+                                Pay Sequence
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                To Receive
+                            </th>
+                            <th scope="col" class=" py-3">
+                                Recipe
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                Status(confirm_payment)
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <?php
+                        include("../admin/config/config.php");
+                        $orders_result = mysqli_query($conn, "SELECT orders.*, products.name AS product_name FROM orders LEFT  JOIN products ON orders.product_id = products.id ORDER BY created_date DESC");
+                        while($orders = mysqli_fetch_assoc($orders_result)):
+                    ?>
+                        <tbody>
+                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                                    <?php echo $orders['name'] ?>
+                                </th>
+                                <td class=" py-4">
+                                <?php echo $orders['email'] ?>
+                                </td>
+                                <td class="px-6 py-4">
+                                <?php echo $orders['product_name'] ?>
+                                </td>
+                                <td class=" py-4">
+                                <?php echo $orders['payment_sequence'] ?>
+                                </td>
+                                <td class="px-6 py-4">
+                                <?php echo $orders['price'] ?>
+                                </td>
+                                <td class=" py-4">
+
+                                <?php
+                                    if($orders['mobile_ss']):
+                                ?>
+                                <div id="mobile_ss">
+                                    <a href="../payments/mobile/<?php echo $orders['mobile_ss'] ?>" target="_blank" >
+                                        <img src="../payments/mobile/<?php echo $orders['mobile_ss'] ?>">
+                                    </a>
+                                </div>
+                                <?php endif;
+                                    if($orders['bank_ss']):
+                                ?>
+                                <div id="bank_ss">
+                                    <a href="../payments/bank/<?php echo $orders['bank_ss'] ?>" target="_blank" >
+                                        <img src="../payments/bank/<?php echo $orders['bank_ss'] ?>">
+                                    </a>
+                                </div>
+                                <?php endif; ?>
+
+                                </td>
+                                <td class="px-6 py-4 text-right">
+                                    <select name="confirm" id="confirm">
+                                        <option value="0">Not Confirmed</option>
+                                        <option value="1">Confirmed</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    <?php endwhile; ?>
+                </table>
+        </div>
+
+        <!--Products Page-->
+        <div id="products" class="hidden max-w-5xl mx-auto my-8">
+            <div class="relative overflow-x-auto">
+                <!--Products-->
+                <table class="w-full text-sm text-center text-gray-500 dark:text-gray-400 sm:rounded-lg">
+                    <thead class="text-xs text-gray-700 uppercase bg-blue-100 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class=" py-3">
                                 Product name
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class=" py-3">
                                 CMS & Theme
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class=" py-3">
                                 Yearly Price
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class=" py-3">
                                 Price
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class=" py-3">
                                 <a href="./newproduct.php" class="sr-only/ text-blue-600">Create New Product</a>
                             </th>
                         </tr>
@@ -96,19 +182,19 @@
                     ?>
                         <tbody>
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                                <th scope="row" class=" py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                                     <?php echo $products['name'] ?>
                                 </th>
-                                <td class="px-6 py-4">
+                                <td class=" py-4">
                                 <?php echo $products['cmstheme'] ?>
                                 </td>
-                                <td class="px-6 py-4">
+                                <td class=" py-4">
                                 <?php echo $products['price'] ?> Ks
                                 </td>
-                                <td class="px-6 py-4">
+                                <td class=" py-4">
                                 <?php echo $products['yearly_price'] ?> Ks
                                 </td>
-                                <td class="px-6 py-4 text-right">
+                                <td class=" py-4">
                                     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                                 </td>
                             </tr>
@@ -117,35 +203,35 @@
                 </table>
 
                 <!--Product Features-->
-                <table class="max-w-8xl text-sm mt-12 text-left text-gray-500 dark:text-gray-400 sm:rounded-lg">
+                <table class="max-w-7xl text-sm mt-12 text-gray-500 dark:text-gray-400 sm:rounded-lg">
                     <thead class="text-xs text-gray-700 uppercase bg-green-100">
                         <tr>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class=" py-3">
                                 Product Name
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class=" py-3">
                                 Site
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class=" py-3">
                                 Domain
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class=" py-3">
                                 Disk Space
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class=" py-3">
                                 Bandwidth
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class=" py-3">
                                 Ssl Status
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class=" py-3">
                                 Support
                             </th>
-                            <th scope="col" class="px-6 py-3">
+                            <th scope="col" class=" py-3">
                                 Comment
                             </th>
-                            <th scope="col" class="px-6 py-3">
-                                <a href="./newproductfeature.php" class="sr-only/ text-blue-600">Create New Feature List</a>
+                            <th scope="col" class=" py-3">
+                                <a href="./newproductfeature.php" class="sr-only/ text-blue-600">New Features</a>
                             </th>
                         </tr>
                     </thead>
@@ -190,7 +276,5 @@
         </div>
     </div>
 </body>
-
-<script src="./index.js"></script>
 
 </html>
