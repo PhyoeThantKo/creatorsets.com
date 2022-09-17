@@ -26,6 +26,14 @@
                     </a>
 
                     <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700 cursor-pointer" onclick="switchToOrders()">
+                        <img src="../app/images/users.png" class="w-5 h-5">
+
+                        <span class="mx-4 font-medium">Users</span>
+                    </a>
+
+
+
+                    <a class="flex items-center px-4 py-2 mt-5 text-gray-600 transition-colors duration-200 transform rounded-md dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-gray-200 hover:text-gray-700 cursor-pointer" onclick="switchToOrders()">
                         <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -97,7 +105,7 @@
 
                     <?php
                         include("../admin/config/config.php");
-                        $orders_result = mysqli_query($conn, "SELECT orders.*, products.name AS product_name FROM orders LEFT  JOIN products ON orders.product_id = products.id ORDER BY created_date DESC");
+                        $orders_result = mysqli_query($conn, "SELECT orders.*, products.name AS product_name FROM orders LEFT  JOIN products ON orders.product_id = products.id WHERE confirm_payment= 0 ORDER BY created_date DESC");
                         while($orders = mysqli_fetch_assoc($orders_result)):
                     ?>
                         <tbody>
@@ -139,11 +147,14 @@
 
                                 </td>
                                 <td class="px-6 py-4 text-right">
-                                    <select name="confirm" id="confirm">
-                                        <option value="0">Not Confirmed</option>
-                                        <option value="1">Confirmed</option>
-                                    </select>
-                                </td>
+
+                                    <form action="updateorders.php?orderid=<?php echo $orders['id'] ?>" method="post">
+                                        <select name="confirm_status" id="confirm">
+                                            <option value="0">Not Confirmed</option>
+                                            <option value="1">Confirmed</option>
+                                        </select>
+                                        <input type="submit" name="Update">
+                                    </form>
                             </tr>
                         </tbody>
                     <?php endwhile; ?>
